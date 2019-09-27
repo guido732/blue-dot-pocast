@@ -102,6 +102,7 @@ img {
 }
 
 .link-hover {
+	transition: 0.35s ease;
 	&:hover {
 		color: $color-highlight;
 		@extend .strikethrough;
@@ -148,10 +149,9 @@ nav {
 	}
 }
 .nav-container {
-	margin: auto;
 	flex-direction: row;
 	justify-content: space-between;
-	padding: 1rem 1rem;
+	padding: 1rem 0;
 }
 #toggle,
 .hamburger > i:last-of-type,
@@ -175,17 +175,12 @@ label {
 	position: absolute;
 	width: 100vw;
 	color: white;
-	background-color: $color-primary;
+	background-color: $color-quaternary;
 	left: 0;
-	margin-top: 1rem;
+	margin-top: 1.75rem;
 	padding: 1rem 0.5rem;
 	li {
 		text-transform: uppercase;
-		padding: 0;
-		margin: 0;
-		list-style: none;
-		transition: 0.35s;
-
 		a {
 			display: block;
 			padding: 1rem;
@@ -203,23 +198,24 @@ label {
 .episodios,
 .cta,
 .integrantes {
-	h2,
+	background: $gradient-bg;
+	margin: 2rem 0;
+	padding: 6rem 0 8rem 0;
 	p,
+	h2,
 	h3 {
 		color: $text-clear;
 		text-align: left;
 	}
-	background: $gradient-bg;
-	margin: 2rem 0;
-	padding: 6rem 0 8rem 0;
 }
 .iframe-container {
 	width: 100%;
-}
-iframe {
-	width: 100%;
-	margin-bottom: 1.5rem;
-	border: none;
+	iframe {
+		width: 100%;
+		margin-bottom: 1.5rem;
+		border: none;
+		height: 15rem;
+	}
 }
 .donde {
 	position: relative;
@@ -534,8 +530,6 @@ footer p {
 				padding: 1rem;
 				margin-left: 1rem;
 				display: inline-block;
-				transition: 0.2s;
-				border-radius: $element-radius;
 			}
 		}
 	}

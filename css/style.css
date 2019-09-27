@@ -83,6 +83,11 @@ img {
   transition: 0.35s !important;
 }
 
+.link-hover {
+  -webkit-transition: 0.35s ease;
+  transition: 0.35s ease;
+}
+
 .link-hover:hover {
   color: #00f3bb;
 }
@@ -142,7 +147,6 @@ nav {
 }
 
 .nav-container {
-  margin: auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -150,7 +154,7 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 1rem 0;
 }
 
 #toggle,
@@ -178,19 +182,14 @@ label {
   position: absolute;
   width: 100vw;
   color: white;
-  background-color: #64d2e3;
+  background-color: #0000ec;
   left: 0;
-  margin-top: 1rem;
+  margin-top: 1.75rem;
   padding: 1rem 0.5rem;
 }
 
 .menu-items li {
   text-transform: uppercase;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  -webkit-transition: 0.35s;
-  transition: 0.35s;
 }
 
 .menu-items li a {
@@ -215,14 +214,14 @@ label {
   padding: 6rem 0 8rem 0;
 }
 
-.episodios h2,
 .episodios p,
+.episodios h2,
 .episodios h3,
-.cta h2,
 .cta p,
+.cta h2,
 .cta h3,
-.integrantes h2,
 .integrantes p,
+.integrantes h2,
 .integrantes h3 {
   color: white;
   text-align: left;
@@ -232,10 +231,11 @@ label {
   width: 100%;
 }
 
-iframe {
+.iframe-container iframe {
   width: 100%;
   margin-bottom: 1.5rem;
   border: none;
+  height: 15rem;
 }
 
 .donde {
@@ -665,9 +665,6 @@ footer p {
     padding: 1rem;
     margin-left: 1rem;
     display: inline-block;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-    border-radius: 0.4rem;
   }
   h1 {
     font-size: 4rem;
