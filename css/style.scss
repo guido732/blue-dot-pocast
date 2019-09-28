@@ -82,13 +82,13 @@ img {
 // Utility classes
 
 .btn {
+	display: inline-block;
 	background: $color-highlight;
-	text-decoration: none;
-	text-transform: uppercase;
 	color: $text-dark;
+	text-transform: uppercase;
+	text-decoration: none;
 	text-align: center;
 	font-weight: 500;
-	display: inline-block;
 	width: 100%;
 	padding: 1rem;
 	margin-bottom: 1rem;
@@ -212,9 +212,9 @@ label {
 	width: 100%;
 	iframe {
 		width: 100%;
-		margin-bottom: 1.5rem;
+		margin-bottom: 1rem;
 		border: none;
-		height: 15rem;
+		height: 14.5rem;
 	}
 }
 .donde {
@@ -284,16 +284,17 @@ label {
 }
 .temas {
 	width: 100%;
+	margin-top: 2rem;
 	h2 {
 		align-self: flex-start;
 	}
 	img {
 		max-width: 6.25rem;
-		margin: 1rem 0 0.8rem 0;
+		margin-bottom: 0.8rem;
 	}
 }
 .tema {
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	transition: 0.4s ease;
 }
 
@@ -316,15 +317,25 @@ footer {
 		transition: 0.2s;
 	}
 }
-.rrss {
-	width: 100%;
-	flex-direction: row;
-	justify-content: space-between;
+footer {
+	padding: 1rem;
+	p {
+		font-size: 0.9rem;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	.rrss {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+		a {
+			padding: 1rem;
+		}
+	}
 }
-.cta h2,
-footer p {
+.cta h2 {
 	text-align: center;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 .episodios,
@@ -412,10 +423,10 @@ footer p {
 				max-width: 50%;
 			}
 			iframe:nth-child(odd) {
-				padding-right: 0.75rem;
+				padding-right: 0.5rem;
 			}
 			iframe:nth-child(even) {
-				padding-left: 0.75rem;
+				padding-left: 0.5rem;
 			}
 		}
 	}
@@ -556,10 +567,10 @@ footer p {
 	}
 	.header-container {
 		flex-direction: row;
-		margin-top: 6rem;
+		margin-top: 8rem;
 		margin-bottom: -4rem;
 		p {
-			max-width: 55%;
+			max-width: 60%;
 		}
 	}
 	.btn {
@@ -579,15 +590,15 @@ footer p {
 			width: 50%;
 		}
 		img {
-			padding: 0 2rem;
+			padding: 0 4rem;
 		}
 		.donde-txt p {
-			max-width: 80%;
+			max-width: 85%;
 		}
 	}
 	.invitadxs {
 		max-width: 1600px;
-		margin: 1rem auto;
+		margin: 4rem auto;
 		.img-container {
 			img {
 				max-width: 33.33%;
@@ -624,11 +635,16 @@ footer p {
 	}
 	.cta {
 		clip-path: polygon(0 calc(0% + 8rem), 100% 0%, 100% 100%, 0 100%);
-		padding: 10rem 0 6rem 0;
+		padding: 14rem 0 8rem 0;
+		margin-bottom: 0;
+		margin-top: 0;
 	}
-	footer {
-		.container-lg {
-			flex-flow: row wrap;
+	footer.container-lg {
+		padding: 2rem 0;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		p {
+			padding: 0;
 		}
 	}
 }
