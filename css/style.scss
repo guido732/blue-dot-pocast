@@ -7,14 +7,20 @@
 	// border: 1px solid red; //Debugging
 }
 
-// Color Variables
+// Variables
 $background: white;
+
 $text-clear: white;
 $text-dark: #060a24;
+
 $color-primary: #00f3bb;
 $color-secondary: #0000ec;
+
 $gradient-bg: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
 $gradient-btn: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
+
+$breakpoint-md: 600px;
+$breakpoint-lg: 1200px;
 
 // Generic prefixer mixin
 @mixin transform($property) {
@@ -46,11 +52,11 @@ h1 {
 	font-size: 2.25rem;
 	line-height: 3rem;
 	margin: 4rem 0 1rem 0;
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: $breakpoint-md) {
 		font-size: 3rem;
 		line-height: 4rem;
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		font-size: 4rem;
 		line-height: 5rem;
 	}
@@ -58,19 +64,19 @@ h1 {
 h2 {
 	@extend %font-sans;
 	font-size: 2.25rem;
-	color: $text-dark;
 	padding: 1rem 0 1rem 0;
-	@media screen and (min-width: 600px) {
+	color: $text-dark;
+	@media screen and (min-width: $breakpoint-md) {
 		font-size: 2.75rem;
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		font-size: 3rem;
 	}
 }
 h3 {
 	@extend %font-sans;
-	font-weight: 600;
 	font-size: 1.5rem;
+	font-weight: 600;
 	text-align: center;
 }
 p {
@@ -93,41 +99,41 @@ img {
 }
 .btn {
 	display: inline-block;
-	background: $color-primary;
-	color: $text-dark;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom: 1rem;
+	padding: 1rem;
 	text-transform: uppercase;
 	text-decoration: none;
 	text-align: center;
 	font-weight: 500;
-	width: 100%;
-	padding: 1rem;
-	margin-bottom: 1rem;
-	cursor: pointer;
+	background: $color-primary;
+	color: $text-dark;
 	transition: 0.35s !important; // override del AOS transition
 	&:hover {
 		background: $gradient-btn;
 		color: $text-clear;
-		transition: 0.35s !important;
+		transition: 0.35s !important; // override del AOS transition
 	}
-	@media screen and (min-width: 600px) {
-		display: inline-block;
-		width: auto;
+	@media screen and (min-width: $breakpoint-md) {
 		padding: 1rem 5rem;
+		width: auto;
+		display: inline-block;
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		padding: 1rem 3rem;
 	}
 }
 .link-hover {
 	transition: 0.35s ease;
 	&:hover {
-		color: $color-primary;
 		@extend .strikethrough;
+		color: $color-primary;
 	}
 	&:active {
+		@extend .strikethrough;
 		color: #060a24;
 		opacity: 0.56;
-		@extend .strikethrough;
 	}
 }
 .vibrate {
@@ -137,14 +143,14 @@ img {
 }
 .container-sm {
 	margin: 0 1rem;
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		max-width: 1040px;
 		margin: auto;
 	}
 }
 .container-lg {
 	margin: 0 1rem;
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		max-width: 1240px;
 		margin: auto;
 	}
@@ -161,16 +167,17 @@ nav {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 3;
 	width: 100%;
+	z-index: 3;
 	background: $background;
 }
 .nav-container {
+	padding: 1rem 0;
 	flex-direction: row;
 	justify-content: space-between;
-	padding: 1rem 0;
 	.logo {
 		width: 2.25rem;
+		padding: 0;
 		img {
 			width: 100%;
 			border-radius: 2rem;
@@ -190,17 +197,21 @@ nav {
 	#toggle:checked ~ .hamburger > .icon-close {
 		display: block;
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		padding: 0;
+		.logo {
+			padding: 0 0.5rem;
+			width: 3.25rem;
+		}
 		#toggle:checked ~ .menu-items,
 		#toggle:not(:checked) ~ .menu-items {
-			display: flex;
-			flex-flow: row wrap;
 			position: relative;
-			background-color: $background;
 			width: auto;
 			margin: 0.5rem 0;
 			padding: 0rem;
+			display: flex;
+			flex-flow: row wrap;
+			background-color: $background;
 		}
 		#toggle,
 		.hamburger {
@@ -211,12 +222,12 @@ nav {
 .menu-items {
 	display: none;
 	position: absolute;
-	width: 100vw;
-	color: white;
-	background-color: $color-secondary;
 	left: 0;
+	width: 100%;
 	margin-top: 1.75rem;
 	padding: 1rem 0.5rem;
+	color: white;
+	background-color: $color-secondary;
 	li {
 		text-transform: uppercase;
 		a {
@@ -224,13 +235,13 @@ nav {
 			padding: 1rem;
 		}
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		li {
 			a {
-				color: $text-dark;
-				padding: 1rem;
-				margin-left: 1rem;
 				display: inline-block;
+				margin-left: 1rem;
+				padding: 1rem;
+				color: $text-dark;
 			}
 		}
 	}
@@ -241,10 +252,10 @@ nav {
 	h1 {
 		padding-right: 4rem;
 	}
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: $breakpoint-md) {
 		margin-bottom: -1rem;
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		flex-direction: row;
 		margin-top: 8rem;
 		margin-bottom: -4rem;
@@ -254,10 +265,10 @@ nav {
 	}
 }
 .episodios {
-	background: $gradient-bg;
-	clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
 	margin: 2rem 0;
 	padding: 6rem 0 8rem 0;
+	background: $gradient-bg;
+	clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
 	h2 {
 		color: $text-clear;
 		text-align: left;
@@ -267,13 +278,13 @@ nav {
 		iframe {
 			width: 100%;
 			margin-bottom: 1rem;
-			border: none;
 			height: 14.5rem;
+			border: none;
 		}
 	}
-	@media screen and (min-width: 600px) {
-		clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
+	@media screen and (min-width: $breakpoint-md) {
 		padding: 5rem 0 10rem 0;
+		clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
 		h2 {
 			margin-top: 2rem;
 		}
@@ -292,12 +303,9 @@ nav {
 			}
 		}
 	}
-	@media screen and (min-width: 1200px) {
-		clip-path: polygon(0 calc(0% + 8rem), 100% 0%, 100% calc(100% - 8rem), 0 100%);
+	@media screen and (min-width: $breakpoint-lg) {
 		padding: 8rem 0 10rem 0;
-		.iframe-container {
-			position: relative;
-		}
+		clip-path: polygon(0 calc(0% + 8rem), 100% 0%, 100% calc(100% - 8rem), 0 100%);
 	}
 }
 .donde {
@@ -306,10 +314,10 @@ nav {
 		margin-top: -8rem;
 		z-index: 2;
 	}
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: $breakpoint-md) {
+		margin-bottom: 4rem;
 		flex-direction: row;
 		justify-content: space-around;
-		margin-bottom: 4rem;
 		.donde-txt {
 			flex: 1 1 40%;
 		}
@@ -323,7 +331,7 @@ nav {
 			padding: 0 5rem;
 		}
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		.donde-img,
 		.donde-txt {
 			width: 50%;
@@ -339,15 +347,15 @@ nav {
 .invitadxs {
 	.img-container {
 		width: 100%;
-		@media screen and (min-width: 600px) {
-			flex-flow: row wrap;
+		@media screen and (min-width: $breakpoint-md) {
 			margin: 1rem auto;
+			flex-flow: row wrap;
 			img {
 				flex: 1 1 40%;
 			}
 		}
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		max-width: 1600px;
 		margin: 4rem auto;
 		.img-container {
@@ -371,7 +379,7 @@ nav {
 		margin-bottom: 2rem;
 		transition: 0.4s ease;
 	}
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: $breakpoint-md) {
 		margin: 0;
 		.img-container {
 			flex-direction: row;
@@ -382,7 +390,7 @@ nav {
 			}
 		}
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		.img-container {
 			justify-content: space-between;
 			.tema {
@@ -398,49 +406,49 @@ nav {
 	}
 }
 .novedades {
+	margin: 2rem 0;
+	margin-bottom: 0;
+	padding: 6rem 0 8rem 0;
 	background: $gradient-bg;
 	clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% 100%, 0 100%);
-	margin: 2rem 0;
-	padding: 6rem 0 8rem 0;
-	margin-bottom: 0;
 	h2 {
-		color: $text-clear;
-		text-align: center;
 		margin-bottom: 1rem;
+		text-align: center;
+		color: $text-clear;
 	}
 	p,
 	h3 {
-		color: $text-clear;
 		text-align: left;
+		color: $text-clear;
 	}
-	@media screen and (min-width: 600px) {
-		clip-path: polygon(0 calc(0% + 10%), 100% 0%, 100% 100%, 0 100%);
-		padding: 6rem 0 6rem 0;
+	@media screen and (min-width: $breakpoint-md) {
 		margin-bottom: 0;
+		padding: 6rem 0 6rem 0;
+		clip-path: polygon(0 calc(0% + 10%), 100% 0%, 100% 100%, 0 100%);
 		a i {
 			margin-left: 0.5rem;
 		}
 	}
-	@media screen and (min-width: 1200px) {
-		clip-path: polygon(0 calc(0% + 8rem), 100% 0%, 100% 100%, 0 100%);
-		padding: 14rem 0 8rem 0;
+	@media screen and (min-width: $breakpoint-lg) {
 		margin-bottom: 0;
 		margin-top: 0;
+		padding: 14rem 0 8rem 0;
+		clip-path: polygon(0 calc(0% + 8rem), 100% 0%, 100% 100%, 0 100%);
 	}
 }
 .footer {
-	background-color: $background;
 	position: relative;
-	z-index: 2;
 	padding: 2rem 0;
+	z-index: 2;
+	background-color: $background;
 	a {
 		color: $text-dark;
 		transition: 0.2s;
 	}
 	p {
+		margin-bottom: 1rem;
 		font-size: 0.9rem;
 		text-align: center;
-		margin-bottom: 1rem;
 	}
 	.rrss {
 		width: 100%;
@@ -450,11 +458,11 @@ nav {
 			padding: 1rem;
 		}
 	}
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: $breakpoint-md) {
 		padding: 2rem 0;
 		p {
-			padding: 1rem;
 			margin: 0;
+			padding: 1rem;
 		}
 		.container-lg {
 			justify-content: space-between;
@@ -471,7 +479,7 @@ nav {
 			}
 		}
 	}
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: $breakpoint-lg) {
 		&.container-lg {
 			padding: 2rem 0;
 			flex-flow: row nowrap;
