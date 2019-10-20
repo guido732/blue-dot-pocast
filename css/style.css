@@ -361,12 +361,13 @@ nav {
   }
   .episodios .iframe-container iframe {
     max-width: 50%;
+    margin-bottom: 4.5rem;
   }
   .episodios .iframe-container iframe:nth-child(odd) {
-    padding-right: 0.5rem;
+    padding-right: 2.25rem;
   }
   .episodios .iframe-container iframe:nth-child(even) {
-    padding-left: 0.5rem;
+    padding-left: 2.25rem;
   }
 }
 
