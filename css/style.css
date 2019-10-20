@@ -96,6 +96,7 @@ img {
   text-decoration: none;
   text-align: center;
   font-weight: 500;
+  font-size: 1rem;
   background: #00f3bb;
   color: #060a24;
   -webkit-transition: 0.35s !important;
@@ -120,6 +121,7 @@ img {
 @media screen and (min-width: 1200px) {
   .btn {
     padding: 1rem 3rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -262,6 +264,9 @@ nav {
 }
 
 @media screen and (min-width: 600px) {
+  .nav-container {
+    padding: 0.8rem 0;
+  }
   .nav-container .logo {
     width: 2rem;
   }
@@ -269,7 +274,7 @@ nav {
 
 @media screen and (min-width: 1200px) {
   .nav-container {
-    padding: 0;
+    padding: 1.1rem 0;
   }
   .nav-container .logo {
     padding: 0 0.5rem;
@@ -317,6 +322,12 @@ nav {
   padding: 1rem;
 }
 
+@media screen and (min-width: 600px) {
+  .menu-items {
+    top: 2rem;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .menu-items {
     top: unset;
@@ -336,6 +347,10 @@ nav {
 
 .header-container h1 {
   padding-right: 4rem;
+}
+
+.header-container p {
+  margin-bottom: 2.25rem;
 }
 
 @media screen and (min-width: 600px) {
@@ -359,8 +374,8 @@ nav {
 }
 
 .episodios {
-  margin: 2rem 0;
-  padding: 6rem 0 8rem 0;
+  margin: 1rem 0;
+  padding: 5rem 0 8rem 0;
   background: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
   -webkit-clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
           clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
@@ -415,9 +430,10 @@ nav {
 
 @media screen and (min-width: 1200px) {
   .episodios {
+    margin: 4rem 0 0 0;
     padding: 8rem 0 10rem 0;
-    -webkit-clip-path: polygon(0 calc(0% + 8rem), 100% 0%, 100% calc(100% - 8rem), 0 100%);
-            clip-path: polygon(0 calc(0% + 8rem), 100% 0%, 100% calc(100% - 8rem), 0 100%);
+    -webkit-clip-path: polygon(0 calc(0% + 10rem), 100% 0%, 100% calc(100% - 10rem), 0 100%);
+            clip-path: polygon(0 calc(0% + 10rem), 100% 0%, 100% calc(100% - 10rem), 0 100%);
   }
 }
 
@@ -439,6 +455,9 @@ nav {
             flex-direction: row;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .donde .donde-txt {
     -webkit-box-flex: 1;
@@ -513,8 +532,12 @@ nav {
   margin-bottom: 0.8rem;
 }
 
+.temas-container .img-container {
+  margin-top: 0.5rem;
+}
+
 .temas-container .tema {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
 }
@@ -561,12 +584,12 @@ nav {
 }
 
 .novedades {
-  margin: 2rem 0;
+  margin: 0rem 0;
   margin-bottom: 0;
-  padding: 6rem 0 8rem 0;
+  padding: 6rem 0 4rem 0;
   background: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
-  -webkit-clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% 100%, 0 100%);
-          clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 calc(0% + 2rem), 100% 0%, 100% 100%, 0 100%);
+          clip-path: polygon(0 calc(0% + 2rem), 100% 0%, 100% 100%, 0 100%);
 }
 
 .novedades h2 {
@@ -655,7 +678,8 @@ nav {
     max-width: 800px;
   }
   .footer .rrss a {
-    margin-left: 2.25rem;
+    font-size: 1.125rem;
+    margin-left: 1.25rem;
     padding: 1rem;
   }
   .footer .rrss a:first-child {

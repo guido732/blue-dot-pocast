@@ -107,6 +107,7 @@ img {
 	text-decoration: none;
 	text-align: center;
 	font-weight: 500;
+	font-size: 1rem;
 	background: $color-primary;
 	color: $text-dark;
 	transition: 0.35s !important; // override del AOS transition
@@ -122,6 +123,7 @@ img {
 	}
 	@media screen and (min-width: $breakpoint-lg) {
 		padding: 1rem 3rem;
+		font-size: 1.125rem;
 	}
 }
 .link-hover {
@@ -223,12 +225,14 @@ nav {
 		display: block;
 	}
 	@media screen and (min-width: $breakpoint-md) {
+		padding: 0.8rem 0;
+
 		.logo {
 			width: 2rem;
 		}
 	}
 	@media screen and (min-width: $breakpoint-lg) {
-		padding: 0;
+		padding: 1.1rem 0;
 		.logo {
 			padding: 0 0.5rem;
 			width: 3.25rem;
@@ -266,6 +270,9 @@ nav {
 			padding: 1rem;
 		}
 	}
+	@media screen and (min-width: $breakpoint-md) {
+		top: 2rem;
+	}
 	@media screen and (min-width: $breakpoint-lg) {
 		top: unset;
 		li {
@@ -284,6 +291,9 @@ nav {
 	h1 {
 		padding-right: 4rem;
 	}
+	p {
+		margin-bottom: 2.25rem;
+	}
 	@media screen and (min-width: $breakpoint-md) {
 		margin-bottom: -1rem;
 	}
@@ -297,8 +307,8 @@ nav {
 	}
 }
 .episodios {
-	margin: 2rem 0;
-	padding: 6rem 0 8rem 0;
+	margin: 1rem 0;
+	padding: 5rem 0 8rem 0;
 	background: $gradient-bg;
 	clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
 	h2 {
@@ -337,8 +347,9 @@ nav {
 		}
 	}
 	@media screen and (min-width: $breakpoint-lg) {
+		margin: 4rem 0 0 0;
 		padding: 8rem 0 10rem 0;
-		clip-path: polygon(0 calc(0% + 8rem), 100% 0%, 100% calc(100% - 8rem), 0 100%);
+		clip-path: polygon(0 calc(0% + 10rem), 100% 0%, 100% calc(100% - 10rem), 0 100%);
 	}
 }
 .donde {
@@ -351,6 +362,7 @@ nav {
 		margin-bottom: 4rem;
 		flex-direction: row;
 		justify-content: space-around;
+		align-items: flex-start;
 		.donde-txt {
 			flex: 1 1 40%;
 		}
@@ -408,8 +420,11 @@ nav {
 		max-width: 6.25rem;
 		margin-bottom: 0.8rem;
 	}
+	.img-container {
+		margin-top: 0.5rem;
+	}
 	.tema {
-		margin-bottom: 2rem;
+		margin-bottom: 4rem;
 		transition: 0.4s ease;
 	}
 	@media screen and (min-width: $breakpoint-md) {
@@ -439,11 +454,11 @@ nav {
 	}
 }
 .novedades {
-	margin: 2rem 0;
+	margin: 0rem 0;
 	margin-bottom: 0;
-	padding: 6rem 0 8rem 0;
+	padding: 6rem 0 4rem 0;
 	background: $gradient-bg;
-	clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% 100%, 0 100%);
+	clip-path: polygon(0 calc(0% + 2rem), 100% 0%, 100% 100%, 0 100%);
 	h2 {
 		margin-bottom: 1rem;
 		text-align: center;
@@ -504,7 +519,8 @@ nav {
 			width: auto;
 			max-width: 800px;
 			a {
-				margin-left: 2.25rem;
+				font-size: 1.125rem;
+				margin-left: 1.25rem;
 				padding: 1rem;
 			}
 			a:first-child {
