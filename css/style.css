@@ -190,7 +190,7 @@ nav {
 }
 
 .nav-container {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -201,7 +201,7 @@ nav {
 }
 
 .nav-container .logo {
-  width: 2.25rem;
+  width: 1.5rem;
   padding: 0;
 }
 
@@ -215,67 +215,42 @@ nav {
           animation: rotate360 0.5s;
 }
 
-.nav-container .mobile-icon {
-  position: relative;
-  display: block;
-  width: 1.75rem;
-  height: 4px;
-  border-radius: 5px;
-  background-color: black;
+.nav-container label {
   cursor: pointer;
-  content: "";
 }
 
-.nav-container .mobile-icon::before {
-  content: "";
+.nav-container .mobile-button {
   display: block;
-  position: absolute;
+  position: relative;
   width: 1.75rem;
   height: 4px;
-  bottom: 0.5rem;
+  margin: 0.3rem 0;
   border-radius: 5px;
   background-color: black;
-  -webkit-transform-origin: left top;
-          transform-origin: left top;
+  content: "";
+  cursor: pointer;
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
 
-.nav-container .mobile-icon::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 1.75rem;
-  height: 4px;
-  top: 0.5rem;
-  border-radius: 5px;
-  background-color: black;
-  -webkit-transform-origin: left bottom;
-          transform-origin: left bottom;
-  -webkit-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-}
-
-.nav-container #toggle:checked ~ .mobile-icon {
+.nav-container #toggle:checked ~ .hamburger > .mb-mid {
   visibility: hidden;
 }
 
-.nav-container #toggle:checked ~ .mobile-icon::before {
-  width: 1.5rem;
-  visibility: visible;
+.nav-container #toggle:checked ~ .hamburger > .mb-top {
+  width: 1.65rem;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  -webkit-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
 }
 
-.nav-container #toggle:checked ~ .mobile-icon::after {
-  width: 1.5rem;
-  visibility: visible;
+.nav-container #toggle:checked ~ .hamburger > .mb-bot {
+  width: 1.65rem;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  -webkit-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
 }
 
 .nav-container #toggle {
@@ -284,6 +259,12 @@ nav {
 
 .nav-container #toggle:checked ~ .menu-items {
   display: block;
+}
+
+@media screen and (min-width: 600px) {
+  .nav-container .logo {
+    width: 2rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -319,6 +300,7 @@ nav {
   display: none;
   position: absolute;
   left: 0;
+  top: 1.25rem;
   width: 100%;
   margin-top: 1.75rem;
   padding: 1rem 0.5rem;
@@ -336,10 +318,13 @@ nav {
 }
 
 @media screen and (min-width: 1200px) {
+  .menu-items {
+    top: unset;
+  }
   .menu-items li a {
     display: inline-block;
     margin-left: 1rem;
-    padding: 1rem;
+    padding: 0.25rem 1rem;
     color: #060a24;
   }
 }

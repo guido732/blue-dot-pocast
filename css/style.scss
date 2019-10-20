@@ -172,11 +172,11 @@ nav {
 	background: $background;
 }
 .nav-container {
-	padding: 1rem 0;
+	padding: 0.5rem 0;
 	flex-direction: row;
 	justify-content: space-between;
 	.logo {
-		width: 2.25rem;
+		width: 1.5rem;
 		padding: 0;
 		img {
 			width: 100%;
@@ -186,53 +186,34 @@ nav {
 			}
 		}
 	}
-	.mobile-icon {
-		position: relative;
+	label {
+		cursor: pointer;
+	}
+	.mobile-button {
 		display: block;
+		position: relative;
 		width: 1.75rem;
 		height: 4px;
+		margin: 0.3rem 0;
 		border-radius: 5px;
 		background-color: black;
-		cursor: pointer;
 		content: "";
-		&::before {
-			content: "";
-			display: block;
-			position: absolute;
-			width: 1.75rem;
-			height: 4px;
-			bottom: 0.5rem;
-			border-radius: 5px;
-			background-color: black;
-			transform-origin: left top;
-			transition: 0.25s ease-in-out;
-		}
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			width: 1.75rem;
-			height: 4px;
-			top: 0.5rem;
-			border-radius: 5px;
-			background-color: black;
-			transform-origin: left bottom;
-			transition: 0.25s ease-in-out;
-		}
+		cursor: pointer;
+		transition: 0.25s ease-in-out;
 	}
-	#toggle:checked ~ .mobile-icon {
-		visibility: hidden;
-		&::before {
-			width: 1.5rem;
-			visibility: visible;
-			transform: rotate(45deg);
-			transition: 0.25s ease-in-out;
+	#toggle:checked ~ .hamburger {
+		& > .mb-mid {
+			visibility: hidden;
 		}
-		&::after {
-			width: 1.5rem;
-			visibility: visible;
+		& > .mb-top {
+			width: 1.65rem;
+			transform-origin: left top;
+			transform: rotate(45deg);
+		}
+		& > .mb-bot {
+			width: 1.65rem;
+			transform-origin: left bottom;
 			transform: rotate(-45deg);
-			transition: 0.25s ease-in-out;
 		}
 	}
 	#toggle {
@@ -240,6 +221,11 @@ nav {
 	}
 	#toggle:checked ~ .menu-items {
 		display: block;
+	}
+	@media screen and (min-width: $breakpoint-md) {
+		.logo {
+			width: 2rem;
+		}
 	}
 	@media screen and (min-width: $breakpoint-lg) {
 		padding: 0;
@@ -267,6 +253,7 @@ nav {
 	display: none;
 	position: absolute;
 	left: 0;
+	top: 1.25rem;
 	width: 100%;
 	margin-top: 1.75rem;
 	padding: 1rem 0.5rem;
@@ -280,11 +267,12 @@ nav {
 		}
 	}
 	@media screen and (min-width: $breakpoint-lg) {
+		top: unset;
 		li {
 			a {
 				display: inline-block;
 				margin-left: 1rem;
-				padding: 1rem;
+				padding: 0.25rem 1rem;
 				color: $text-dark;
 			}
 		}
