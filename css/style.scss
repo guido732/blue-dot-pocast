@@ -186,15 +186,59 @@ nav {
 			}
 		}
 	}
-	#toggle,
-	.hamburger > .icon-close {
+	.mobile-icon {
+		position: relative;
+		display: block;
+		width: 1.75rem;
+		height: 4px;
+		border-radius: 5px;
+		background-color: black;
+		cursor: pointer;
+		content: "";
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 1.75rem;
+			height: 4px;
+			bottom: 0.5rem;
+			border-radius: 5px;
+			background-color: black;
+			transform-origin: left top;
+			transition: 0.25s ease-in-out;
+		}
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 1.75rem;
+			height: 4px;
+			top: 0.5rem;
+			border-radius: 5px;
+			background-color: black;
+			transform-origin: left bottom;
+			transition: 0.25s ease-in-out;
+		}
+	}
+	#toggle:checked ~ .mobile-icon {
+		visibility: hidden;
+		&::before {
+			width: 1.5rem;
+			visibility: visible;
+			transform: rotate(45deg);
+			transition: 0.25s ease-in-out;
+		}
+		&::after {
+			width: 1.5rem;
+			visibility: visible;
+			transform: rotate(-45deg);
+			transition: 0.25s ease-in-out;
+		}
+	}
+	#toggle {
 		display: none;
 	}
-	#toggle:checked ~ .hamburger > .icon-hamburguer {
-		display: none;
-	}
-	#toggle:checked ~ .menu-items,
-	#toggle:checked ~ .hamburger > .icon-close {
+	#toggle:checked ~ .menu-items {
 		display: block;
 	}
 	@media screen and (min-width: $breakpoint-lg) {

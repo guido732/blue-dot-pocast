@@ -215,17 +215,74 @@ nav {
           animation: rotate360 0.5s;
 }
 
-.nav-container #toggle,
-.nav-container .hamburger > .icon-close {
+.nav-container .mobile-icon {
+  position: relative;
+  display: block;
+  width: 1.75rem;
+  height: 4px;
+  border-radius: 5px;
+  background-color: black;
+  cursor: pointer;
+  content: "";
+}
+
+.nav-container .mobile-icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1.75rem;
+  height: 4px;
+  bottom: 0.5rem;
+  border-radius: 5px;
+  background-color: black;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.nav-container .mobile-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1.75rem;
+  height: 4px;
+  top: 0.5rem;
+  border-radius: 5px;
+  background-color: black;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.nav-container #toggle:checked ~ .mobile-icon {
+  visibility: hidden;
+}
+
+.nav-container #toggle:checked ~ .mobile-icon::before {
+  width: 1.5rem;
+  visibility: visible;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.nav-container #toggle:checked ~ .mobile-icon::after {
+  width: 1.5rem;
+  visibility: visible;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.nav-container #toggle {
   display: none;
 }
 
-.nav-container #toggle:checked ~ .hamburger > .icon-hamburguer {
-  display: none;
-}
-
-.nav-container #toggle:checked ~ .menu-items,
-.nav-container #toggle:checked ~ .hamburger > .icon-close {
+.nav-container #toggle:checked ~ .menu-items {
   display: block;
 }
 
