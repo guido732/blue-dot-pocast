@@ -232,15 +232,15 @@ img {
   font-size: 1rem;
   background: #00f3bb;
   color: #060a24;
-  -webkit-transition: 0.35s !important;
-  transition: 0.35s !important;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
 }
 
 .btn:hover {
   background: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
   color: white;
-  -webkit-transition: 0.35s !important;
-  transition: 0.35s !important;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
 }
 
 @media screen and (min-width: 600px) {
