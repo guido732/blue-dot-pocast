@@ -449,7 +449,7 @@ nav {
   }
 }
 
-.episodios {
+.episodes {
   margin: 1rem 0;
   padding: 5rem 0 8rem 0;
   background: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
@@ -457,16 +457,16 @@ nav {
           clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
 }
 
-.episodios h2 {
+.episodes h2 {
   color: white;
   text-align: left;
 }
 
-.episodios .iframe-container {
+.episodes .iframe-container {
   width: 100%;
 }
 
-.episodios .iframe-container iframe {
+.episodes .iframe-container iframe {
   width: 100%;
   margin-bottom: 1rem;
   height: 14.5rem;
@@ -474,15 +474,15 @@ nav {
 }
 
 @media screen and (min-width: 600px) {
-  .episodios {
+  .episodes {
     padding: 5rem 0 10rem 0;
     -webkit-clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
             clip-path: polygon(0 calc(0% + 4rem), 100% 0%, 100% calc(100% - 4rem), 0 100%);
   }
-  .episodios h2 {
+  .episodes h2 {
     margin-top: 2rem;
   }
-  .episodios .iframe-container {
+  .episodes .iframe-container {
     margin-top: 2rem;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -492,20 +492,20 @@ nav {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .episodios .iframe-container iframe {
+  .episodes .iframe-container iframe {
     max-width: 50%;
     margin-bottom: 4.5rem;
   }
-  .episodios .iframe-container iframe:nth-child(odd) {
+  .episodes .iframe-container iframe:nth-child(odd) {
     padding-right: 2.25rem;
   }
-  .episodios .iframe-container iframe:nth-child(even) {
+  .episodes .iframe-container iframe:nth-child(even) {
     padding-left: 2.25rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .episodios {
+  .episodes {
     margin: 4rem 0 0 0;
     padding: 8rem 0 10rem 0;
     -webkit-clip-path: polygon(0 calc(0% + 10rem), 100% 0%, 100% calc(100% - 10rem), 0 100%);
@@ -513,17 +513,17 @@ nav {
   }
 }
 
-.donde {
+.about {
   position: relative;
 }
 
-.donde img {
+.about img {
   margin-top: -8rem;
   z-index: 2;
 }
 
 @media screen and (min-width: 600px) {
-  .donde {
+  .about {
     margin-bottom: 4rem;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -535,15 +535,15 @@ nav {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .donde .donde-txt {
+  .about .about-txt {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 40%;
             flex: 1 1 40%;
   }
-  .donde .donde-txt p {
+  .about .about-txt p {
     padding-right: 4rem;
   }
-  .donde img {
+  .about img {
     max-width: 550px;
     margin: auto;
     margin-top: -10rem;
@@ -552,31 +552,31 @@ nav {
 }
 
 @media screen and (min-width: 1200px) {
-  .donde .donde-img,
-  .donde .donde-txt {
+  .about .about-img,
+  .about .about-txt {
     width: 50%;
   }
-  .donde img {
+  .about img {
     padding: 0 4rem;
   }
-  .donde .donde-txt p {
+  .about .about-txt p {
     max-width: 85%;
   }
 }
 
-.invitadxs .img-container {
+.guests .img-container {
   width: 100%;
 }
 
 @media screen and (min-width: 600px) {
-  .invitadxs .img-container {
+  .guests .img-container {
     margin: 1rem auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
   }
-  .invitadxs .img-container img {
+  .guests .img-container img {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 40%;
             flex: 1 1 40%;
@@ -584,45 +584,45 @@ nav {
 }
 
 @media screen and (min-width: 1200px) {
-  .invitadxs {
+  .guests {
     max-width: 1600px;
     margin: 4rem auto;
   }
-  .invitadxs .img-container img {
+  .guests .img-container img {
     max-width: 33.33%;
   }
 }
 
-.temas-container {
+.topics-container {
   width: 100%;
   margin-top: 2rem;
 }
 
-.temas-container h2 {
+.topics-container h2 {
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
 
-.temas-container img {
+.topics-container img {
   max-width: 6.25rem;
   margin-bottom: 0.8rem;
 }
 
-.temas-container .img-container {
+.topics-container .img-container {
   margin-top: 0.5rem;
 }
 
-.temas-container .tema {
+.topics-container .topic {
   margin-bottom: 4rem;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
 }
 
 @media screen and (min-width: 600px) {
-  .temas-container {
+  .topics-container {
     margin: 0;
   }
-  .temas-container .img-container {
+  .topics-container .img-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -631,7 +631,7 @@ nav {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .temas-container .img-container .tema {
+  .topics-container .img-container .topic {
     padding: 2rem;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 35%;
@@ -640,17 +640,17 @@ nav {
 }
 
 @media screen and (min-width: 1200px) {
-  .temas-container .img-container {
+  .topics-container .img-container {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .temas-container .img-container .tema {
+  .topics-container .img-container .topic {
     max-width: 25%;
     -webkit-transition: 0.4s ease;
     transition: 0.4s ease;
   }
-  .temas-container .img-container .tema:hover {
+  .topics-container .img-container .topic:hover {
     -webkit-transform: scale(1.2) translateY(-0.5rem);
     transform: scale(1.2) translateY(-0.5rem);
     -webkit-transition: 0.4s ease;
@@ -659,7 +659,7 @@ nav {
   }
 }
 
-.novedades {
+.news {
   margin: 0rem 0;
   margin-bottom: 0;
   padding: 6rem 0 4rem 0;
@@ -668,32 +668,32 @@ nav {
           clip-path: polygon(0 calc(0% + 2rem), 100% 0%, 100% 100%, 0 100%);
 }
 
-.novedades h2 {
+.news h2 {
   margin-bottom: 1rem;
   text-align: center;
   color: white;
 }
 
-.novedades p,
-.novedades h3 {
+.news p,
+.news h3 {
   text-align: left;
   color: white;
 }
 
 @media screen and (min-width: 600px) {
-  .novedades {
+  .news {
     margin-bottom: 0;
     padding: 6rem 0 6rem 0;
     -webkit-clip-path: polygon(0 calc(0% + 10%), 100% 0%, 100% 100%, 0 100%);
             clip-path: polygon(0 calc(0% + 10%), 100% 0%, 100% 100%, 0 100%);
   }
-  .novedades a i {
+  .news a i {
     margin-left: 0.5rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .novedades {
+  .news {
     margin-bottom: 0;
     margin-top: 0;
     padding: 14rem 0 8rem 0;
@@ -721,7 +721,7 @@ nav {
   text-align: center;
 }
 
-.footer .rrss {
+.footer .social {
   width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -732,7 +732,7 @@ nav {
           justify-content: space-between;
 }
 
-.footer .rrss a {
+.footer .social a {
   padding: 1rem;
 }
 
@@ -749,16 +749,16 @@ nav {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .footer .rrss {
+  .footer .social {
     width: auto;
     max-width: 800px;
   }
-  .footer .rrss a {
+  .footer .social a {
     font-size: 1.125rem;
     margin-left: 1.25rem;
     padding: 1rem;
   }
-  .footer .rrss a:first-child {
+  .footer .social a:first-child {
     margin-left: 0;
   }
 }
