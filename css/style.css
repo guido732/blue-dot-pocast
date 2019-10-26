@@ -307,8 +307,8 @@ nav {
   background-color: black;
   content: "";
   cursor: pointer;
-  -webkit-transition: 0s ease-in-out;
-  transition: 0s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 .nav-container #toggle:checked ~ .hamburger > .mb-mid {

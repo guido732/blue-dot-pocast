@@ -34,7 +34,7 @@ nav {
 		background-color: black;
 		content: "";
 		cursor: pointer;
-		transition: 0s ease-in-out;
+		transition: 0.25s ease-in-out;
 	}
 	#toggle:checked ~ .hamburger {
 		& > .mb-mid {
